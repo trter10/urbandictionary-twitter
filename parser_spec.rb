@@ -15,4 +15,9 @@ describe Parser do
     it { Parser.parse("what is a elephant?").should == "elephant" }
     it { Parser.parse("what is a \"elephant\"?").should == "elephant" }
   end
+  
+  describe "what the fuck/hell is" do
+    it { Parser.parse("what the fuck is an elephant?").should == "elephant" }
+    it { Parser.parse("what the hell is a elephant?").should == "elephant" }
+  end
 end
