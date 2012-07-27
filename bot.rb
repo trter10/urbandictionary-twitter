@@ -1,5 +1,5 @@
 require 'tweetstream'
-require File.dirname(__FILE__) + '/parser'
+require './parser'
 
 TweetStream.configure do |config|
   config.consumer_key = ENV["CONSUMER_KEY"]
