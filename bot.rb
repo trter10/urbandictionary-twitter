@@ -1,4 +1,4 @@
-require 'tweetstream'
+Bundler.require
 require './parser'
 
 TweetStream.configure do |config|
@@ -8,8 +8,15 @@ TweetStream.configure do |config|
   config.oauth_token_secret = ENV["OAUTH_TOKEN_SECRET"]
 end
 
-TweetStream::Client.new.track("what does * mean") do |status|
-  puts status.text
-  puts status.screen_name
-  puts Parser.parse(status.text)
+client = TweetStream::Client.new
+client.on_error { puts "error" }
+
+client.track("what does", "what the fuck", "what the hell") do |status|
+  ap status.text
+  
+  parsed = Parser.parse(status.text)
+  if parsed
+    ap status
+    ap parsed
+  end
 end
