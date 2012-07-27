@@ -12,6 +12,8 @@ end
 client = TweetStream::Client.new
 client.on_error { puts "error" }
 
+puts "starting"
+
 client.track("what does", "what the fuck", "what the hell") do |status|
   puts status.text
   
