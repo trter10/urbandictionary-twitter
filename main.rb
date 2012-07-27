@@ -13,7 +13,7 @@ client = TweetStream::Client.new
 client.on_error { puts "error" }
 
 client.track("what does", "what the fuck", "what the hell") do |status|
-  ap status.text
+  puts status.text
   
   parsed = Parser.parse(status.text)
   if parsed
