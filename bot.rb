@@ -1,5 +1,6 @@
 Bundler.require
 require './parser'
+require './ud'
 
 TweetStream.configure do |config|
   config.consumer_key = ENV["CONSUMER_KEY"]
@@ -18,5 +19,10 @@ client.track("what does", "what the fuck", "what the hell") do |status|
   if parsed
     ap status
     ap parsed
+    
+    result = UD.define(parsed)
+    if result["result_type"] == "exact" && !result["list"].empty?
+      ap result["list"].first
+    end
   end
 end
