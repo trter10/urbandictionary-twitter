@@ -19,6 +19,11 @@ describe Parser do
     it { Parser.parse("what is a \"big elephant\"?").should == "big elephant" }
   end
   
+  describe "define" do
+    it { Parser.parse("Define \"pig sty\".").should == "pig sty" }
+    it { Parser.parse("accept no one's definition of your life. define yourself.").should be_nil }
+  end
+  
   describe "what the fuck/hell is" do
     it { Parser.parse("what the fuck is an elephant?").should == "elephant" }
     it { Parser.parse("What The Fuck Does MLRT mean?").should == "MLRT" }
