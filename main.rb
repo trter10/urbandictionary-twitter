@@ -11,29 +11,28 @@ TweetStream.configure do |config|
 end
 
 client = TweetStream::Client.new
-client.on_error { puts "error" }
-client.on_inited { puts "inited" }
-client.on_limit { puts "limit" }
-client.on_unauthorized { puts "unauthorized" }
-client.on_anything { puts "anything" }
-client.on_reconnect { puts "reconnect" }
-client.on_no_data_received { puts "no_data_received" }
-client.on_enhance_your_calm { puts "enhance_your_calm" }
+client.on_error { puts "TWEETSTREAM error" }
+client.on_inited { puts "TWEETSTREAM inited" }
+client.on_limit { puts "TWEETSTREAM limit" }
+client.on_unauthorized { puts "TWEETSTREAM unauthorized" }
+client.on_anything { puts "TWEETSTREAM anything" }
+client.on_reconnect { puts "TWEETSTREAM reconnect" }
+client.on_no_data_received { puts "TWEETSTREAM no_data_received" }
+client.on_enhance_your_calm { puts "TWEETSTREAM enhance_your_calm" }
 
-client.track("what does", "what the fuck", "what the hell") do |status|
-  puts status.text
+client.track("what does", "what the", "what is") do |status|
+  puts "STATUS #{status.text.inspect}"
   
   begin
     parsed = Parser.parse(status.text)
-    if parsed
-      ap status
-      ap parsed
     
+    if parsed
+      puts "PARSED #{parsed.inspect}"
+
       result = UD.define(parsed)
       if result["result_type"] == "exact" && !result["list"].empty?
-        first = result["list"].first
-        ap first
-        ap Formatter.format(status.from_user, first)
+        response = Formatter.format(status.from_user, result["list"].first)
+        puts "RESPONSE #{response.inspect}"
       end
     end
   rescue Exception => e
