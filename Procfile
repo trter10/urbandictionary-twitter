@@ -1,1 +1,1 @@
-bot: bundle exec ruby main.rb
+main: bundle exec ruby main.rb

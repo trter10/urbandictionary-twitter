@@ -3,12 +3,14 @@ require './parser'
 require './ud'
 require './formatter'
 
-TweetStream.configure do |config|
+raise "Missing env var" if %w[CONSUMER_KEY CONSUMER_SECRET ACCESS_TOKEN ACCESS_TOKEN_SECRET].find { |key| ENV[key].nil? }
+
+[TweetStream, Twitter].each { |klass| klass.configure do |config|
   config.consumer_key = ENV["CONSUMER_KEY"]
   config.consumer_secret = ENV["CONSUMER_SECRET"]
   config.oauth_token = ENV["ACCESS_TOKEN"]
   config.oauth_token_secret = ENV["ACCESS_TOKEN_SECRET"]
-end
+end}
 
 client = TweetStream::Client.new
 client.on_error { puts "TWEETSTREAM error" }

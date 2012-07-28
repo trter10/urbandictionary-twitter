@@ -7,7 +7,7 @@ class Parser
   def self.parse(string)
     REGEXPS.find { |regexp| string =~ regexp }
     match = $1
-    return nil if match =~ /^it|that$/i
+    return nil if match =~ /^it|that|this|that even|she|he$/i
     match
   end
 end
