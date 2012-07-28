@@ -17,6 +17,7 @@ describe Parser do
     it { Parser.parse("what is an elephant?").should == "elephant" }
     it { Parser.parse("what is a elephant?").should == "elephant" }
     it { Parser.parse("what is a \"big elephant\"?").should == "big elephant" }
+    it { Parser.parse("@urbandictionary big elephant").should == "big elephant" }
   end
   
   describe "define" do
