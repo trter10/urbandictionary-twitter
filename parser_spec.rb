@@ -26,6 +26,7 @@ describe Parser do
   
   describe "what the fuck/hell is" do
     it { Parser.parse("what the fuck is an elephant?").should == "elephant" }
+    it { Parser.parse("@urbandictionary what the fuck is an elephant?").should == "elephant" }
     it { Parser.parse("What The Fuck Does MLRT mean?").should == "MLRT" }
     it { Parser.parse("what the hell is a elephant?").should == "elephant" }
     it { Parser.parse("@jayl3n FUCK what does two strands mean in the first place").should be_nil }
