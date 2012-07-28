@@ -18,6 +18,7 @@ describe Parser do
     it { Parser.parse("what is a elephant?").should == "elephant" }
     it { Parser.parse("what is a \"big elephant\"?").should == "big elephant" }
     it { Parser.parse("@urbandictionary big elephant").should == "big elephant" }
+    xit { Parser.parse("Laughing like shit, corny af RT @OhhSoo_COLD: What Does Lls Mean ?").should be_nil }
   end
   
   describe "define" do
