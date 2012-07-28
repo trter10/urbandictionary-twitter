@@ -6,6 +6,7 @@ class Parser
   ]
 
   def self.parse(string)
+    return nil if string =~ /^@/
     REGEXPS.find { |regexp| string =~ regexp }
     match = $1
     return nil if match =~ /^it|that|this|that even|she|he$/i
