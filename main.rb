@@ -23,7 +23,7 @@ client.on_enhance_your_calm { puts "enhance_your_calm" }
 client.track("what does", "what the fuck", "what the hell") do |status|
   puts status.text
   
-  begin  
+  begin
     parsed = Parser.parse(status.text)
     if parsed
       ap status

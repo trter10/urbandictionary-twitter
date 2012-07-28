@@ -8,6 +8,7 @@ describe Parser do
     it { Parser.parse("what does \"bootylicious\" mean?").should == "bootylicious" }
     it { Parser.parse("what does it mean?").should be_nil }
     it { Parser.parse("what does that mean?").should be_nil }
+    it { Parser.parse("what does THAT mean?").should be_nil }
   end
   
   describe "what is" do
