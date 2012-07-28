@@ -34,7 +34,7 @@ client.track("what does", "what the", "what is") do |status|
       result = UD.define(parsed)
       if result["result_type"] == "exact" && !result["list"].empty?
         response = Formatter.format(status.from_user, result["list"].first)
-        Twitter.update(response) if ENV["UPDATE_TWITTER"]
+        Twitter.update(response, in_reply_to_status_id: status.id) if ENV["UPDATE_TWITTER"]
         puts "RESPONSE #{response.inspect}"
       end
     end
