@@ -31,5 +31,6 @@ describe Parser do
     it { Parser.parse("@jayl3n FUCK what does two strands mean in the first place").should be_nil }
     it { Parser.parse("FUCK what does two strands mean in the first place").should == "two strands" }
     it { Parser.parse("What does \"Champion of the Earth\" actually mean/what the fuck do they do?!").should == "Champion of the Earth" }
+    it { Parser.parse("Omg my mom says \"what does 69 mean \" and my brothers explaining it to her but it's totally wrong lmaoo..").should be_nil }
   end
 end
