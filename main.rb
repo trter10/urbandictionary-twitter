@@ -1,6 +1,7 @@
 Bundler.require
 require './parser'
 require './ud'
+require './formatter'
 
 TweetStream.configure do |config|
   config.consumer_key = ENV["CONSUMER_KEY"]
@@ -30,7 +31,9 @@ client.track("what does", "what the fuck", "what the hell") do |status|
     
       result = UD.define(parsed)
       if result["result_type"] == "exact" && !result["list"].empty?
-        ap result["list"].first
+        first = result["list"].first
+        ap first
+        ap Formatter.format(status.from_user, first)
       end
     end
   rescue Exception => e
