@@ -20,11 +20,10 @@ describe Parser do
     what the shit does 'X Y' mean?
     @urbandictionary what is 'X Y'?
     @urbandictionary what does 'X Y' mean?
+    @urbandictionary X Y
+    @urbandictionary 'X Y'
+    @urbandictionary "X Y"
   END
-  # @urbandictionary X Y
-  #   @urbandictionary 'X Y'
-  #   @urbandictionary "X Y"
-  #   
 
   context "matches" do
     MATCHES.each_line do |line|
