@@ -38,10 +38,12 @@ describe Parser do
       what the hell does 'X Y' mean?
       what the shit does 'X Y' mean?
       @urbandictionary what is 'X Y'?
+      @UrbanDictionary what is 'X Y'?
       @urbandictionary what does 'X Y' mean?
       @urbandictionary X Y
       @urbandictionary 'X Y'
       @urbandictionary "X Y"
+      @UrbanDictionary X Y
       What The Fuck Does X Y mean?
     END
   end
@@ -56,6 +58,7 @@ describe Parser do
       what does that really mean?
       what is IT?
       @nobody whatever
+      xoxo @urbandictionary xoxo
       Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
     END
   end
