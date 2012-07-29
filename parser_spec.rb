@@ -29,15 +29,6 @@ describe Parser do
     What The Fuck Does X Y mean?
   END
 
-  context "matches" do
-    MATCHES.each_line do |line|
-      line.strip!
-      it line.inspect do
-        Parser.parse(line).should == "X Y"
-      end
-    end
-  end
-
   NO_MATCHES = <<-END
     what does it mean?
     what does it even mean?
@@ -49,6 +40,21 @@ describe Parser do
     @nobody whatever
     Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
   END
+  
+  def self.each_line_it(array)
+    array.each_line do |line|
+      line.strip!
+      it line.inspect do
+        yield line
+      end
+    end
+  end
+
+  context "matches" do
+    each_line_it MATCHES do |line|
+      Parser.parse(line).should == "X Y"
+    end
+  end
 
   context "doesn't match" do
     NO_MATCHES.each_line do |line|
