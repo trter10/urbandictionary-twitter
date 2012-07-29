@@ -5,7 +5,7 @@ class Parser
     # /^define "?([\w\s]+)"?\.?$/i,
     # /@urbandictionary (.+)/i
     /^what(?: the fuck| the hell| the shit)? is ['"]?([\w\s]+)['"]?\?$/,
-    /^what(?: the fuck| the hell| the shit)? does ['"]?([\w\s]+)['"]? mean\?$/,
+    /^what(?: the fuck| the hell| the shit)? does ['"]?([\w\s]+)['"]?(?: even| really)? mean\?$/,
   ]
 
   def self.parse(string)

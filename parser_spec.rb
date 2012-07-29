@@ -10,6 +10,8 @@ describe Parser do
     what the hell is 'X Y'?
     what does "X Y" mean?
     what does 'X Y' mean?
+    what does 'X Y' really mean?
+    what does 'X Y' even mean?
     what the fuck does 'X Y' mean?
     what the hell does 'X Y' mean?
     what the shit does 'X Y' mean?
