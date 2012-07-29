@@ -10,6 +10,8 @@ class Parser
 
   def self.parse(string)
     REGEXPS.find { |regexp| string =~ regexp }
-    $1
+    match = $1
+    return nil if match =~ /^(it|it all)$/
+    match
   end
 end

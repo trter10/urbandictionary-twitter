@@ -6,10 +6,10 @@ describe Parser do
     what is X Y?
   END
 
-  describe "matches" do
+  context "matches" do
     MATCHES.each_line do |line|
       line.strip!
-      it line do
+      it line.inspect do
         Parser.parse(line).should == "X Y"
       end
     end
@@ -20,10 +20,10 @@ describe Parser do
     what does it all mean?
   END
 
-  describe "no matches" do
-    MATCHES.each_line do |line|
+  context "doesn't match" do
+    NO_MATCHES.each_line do |line|
       line.strip!
-      it line do
+      it line.inspect do
         Parser.parse(line).should be_nil
       end
     end
