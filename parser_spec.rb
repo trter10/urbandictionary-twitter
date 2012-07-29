@@ -1,8 +1,8 @@
 require './parser'
 
 describe Parser do
-  def self.describe_lines(array, expected)
-    array.each_line do |line|
+  def self.describe_lines(string, expected)
+    string.each_line do |line|
       line.strip!
       it line.inspect do
         Parser.parse(line).should == expected
@@ -40,19 +40,17 @@ describe Parser do
     END
   end
 
-  NO_MATCHES = <<-END
-    what does it mean?
-    what does it even mean?
-    what does it all mean?
-    what does that mean?
-    what does that even mean?
-    what does that really mean?
-    what is IT?
-    @nobody whatever
-    Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
-  END
-  
   describe "doesn't match" do
-    describe_lines NO_MATCHES, nil
+    describe_lines <<-END, nil
+      what does it mean?
+      what does it even mean?
+      what does it all mean?
+      what does that mean?
+      what does that even mean?
+      what does that really mean?
+      what is IT?
+      @nobody whatever
+      Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
+    END
   end
 end
