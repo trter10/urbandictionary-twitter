@@ -14,6 +14,7 @@ describe Parser do
     describe_lines <<-END, "X Y"
       what does X Y mean?
       what is X Y?
+      what is X Y
       what IS X Y?
       what is X Y ?
       wut is X Y ?
@@ -28,6 +29,7 @@ describe Parser do
       whut does X Y mean?
       wut does X Y mean?
       what does "X Y" mean?
+      what does "X Y" mean
       what does 'X Y' mean?
       what does 'X Y' really mean?
       what does 'X Y' even mean?
