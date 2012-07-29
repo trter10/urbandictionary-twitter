@@ -14,32 +14,32 @@ describe Parser do
   end
 
   describe "should match" do
-    describe_lines <<-END, "X Y"
-      what does X Y mean?
-      what the fuck is 'X Y'?
-      what the hell is 'X Y'?
-      whut does X Y mean?
-      wut does X Y mean?
-      what does "X Y" mean?
-      what does "X Y" mean
-      what does 'X Y' mean?
-      what does 'X Y' really mean?
-      what does 'X Y' even mean?
-      what the fuck does 'X Y' mean?
-      what the FUCK does 'X Y' mean?
-      what the hell does 'X Y' mean?
-      what the shit does 'X Y' mean?
-      @urbandictionary what is 'X Y'?
-      @UrbanDictionary what is 'X Y'?
-      @urbandictionary what does 'X Y' mean?
-      @urbandictionary X Y
-      @urbandictionary 'X Y'
-      @urbandictionary "X Y"
-      @UrbanDictionary X Y
-      What The Fuck Does X Y mean?
-      X Y #urbandictionary
-      X Y #UrbanDictionary
-      #urbandictionary X Y
+    describe_lines <<-END, "hand job"
+      what does hand job mean?
+      what the fuck is 'hand job'?
+      what the hell is 'hand job'?
+      whut does hand job mean?
+      wut does hand job mean?
+      what does "hand job" mean?
+      what does "hand job" mean
+      what does 'hand job' mean?
+      what does 'hand job' really mean?
+      what does 'hand job' even mean?
+      what the fuck does 'hand job' mean?
+      what the FUCK does 'hand job' mean?
+      what the hell does 'hand job' mean?
+      what the shit does 'hand job' mean?
+      @urbandictionary what is 'hand job'?
+      @UrbanDictionary what is 'hand job'?
+      @urbandictionary what does 'hand job' mean?
+      @urbandictionary hand job
+      @urbandictionary 'hand job'
+      @urbandictionary "hand job"
+      @UrbanDictionary hand job
+      What The Fuck Does hand job mean?
+      hand job #urbandictionary
+      hand job #UrbanDictionary
+      #urbandictionary hand job
     END
   end
 
@@ -50,18 +50,18 @@ describe Parser do
     ], nil
     
     describe_lines <<-END, nil
-      what is X Y?
-      what is X Y
-      what IS X Y?
-      what is X Y ?
-      wut is X Y ?
-      whut is X Y ?
-      wtf is X Y
-      what is a X Y?
-      what is an X Y?
-      what is "X Y"?
-      what is 'X Y'?
-      what is X Y anyway?
+      what is hand job?
+      what is hand job
+      what IS hand job?
+      what is hand job ?
+      wut is hand job ?
+      whut is hand job ?
+      wtf is hand job
+      what is a hand job?
+      what is an hand job?
+      what is "hand job"?
+      what is 'hand job'?
+      what is hand job anyway?
       what does it mean?
       what does it even mean?
       what does it all mean?
