@@ -1,6 +1,6 @@
 = @urbandictionary
 
-This is a twitter bot that responds to people when they say "what does bootylicious mean?"
+This is a twitter bot that responds when people tweet "what does bootylicious mean?" or "define badunkadunk".
 
 == Note on Patches/Pull Requests
  
@@ -8,9 +8,10 @@ This is a twitter bot that responds to people when they say "what does bootylici
 * Run the tests locally with "rake" to make sure they pass.
 * Add a test for your feature. This is important to prevent future regressions.
 * Run the tests locally to make sure the test fails as expected.
-* Make your feature addition or bug fix by making the test pass.
+* Make your feature addition or bug fix.
+* Run the tests locally to make sure the test passes as expected.
 * Commit.
-* Send me a pull request.
+* Send a pull request.
 
 == Copyright
 
