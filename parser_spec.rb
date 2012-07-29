@@ -57,6 +57,10 @@ describe Parser do
       what does that even mean?
       what does that really mean?
       what is IT?
+      what is air
+      what is today?
+      what is going on?
+      what is up
       @nobody whatever
       xoxo @urbandictionary xoxo
       Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
