@@ -41,24 +41,20 @@ describe Parser do
     Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
   END
   
-  def self.describe_lines(array)
+  def self.describe_lines(array, expected)
     array.each_line do |line|
       line.strip!
       it line.inspect do
-        yield line
+        Parser.parse(line).should == expected
       end
     end
   end
 
   describe "matches" do
-    describe_lines MATCHES do |line|
-      Parser.parse(line).should == "X Y"
-    end
+    describe_lines MATCHES, "X Y"
   end
 
   describe "doesn't match" do
-    describe_lines NO_MATCHES do |line|
-      Parser.parse(line).should == nil
-    end
+    describe_lines NO_MATCHES, nil
   end
 end
