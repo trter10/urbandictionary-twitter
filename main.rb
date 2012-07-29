@@ -41,6 +41,7 @@ KEYWORDS = <<-END.split("\n").map(&:strip)
   what does
   whut does
   whut does
+  define
 END
 
 client.track(*KEYWORDS) do |status|

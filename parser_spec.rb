@@ -40,6 +40,9 @@ describe Parser do
       hand job #urbandictionary
       hand job #UrbanDictionary
       #urbandictionary hand job
+      define hand job
+      DEFINE hand job
+      define 'hand job'
     END
   end
 
