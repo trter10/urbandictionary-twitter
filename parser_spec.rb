@@ -71,6 +71,7 @@ describe Parser do
       what is IT?
       what is air
       what is today?
+      what is happening?
       what is going on?
       what is up
       WHAT IS THIS

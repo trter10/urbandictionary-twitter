@@ -15,7 +15,7 @@ class Parser
     if (match = $1)
       match.strip!
       match.sub!(/ anyway$/, '')
-      match unless match =~ /^(it|it all|it even|that|this|that even|that really|air|today|going on|up)$/i
+      match unless match =~ /^(it|it all|it even|that|this|that even|that really|air|today|going on|up|happening)$/i
     end
   end
 end
