@@ -4,6 +4,10 @@ describe Parser do
   MATCHES = <<-END
     what does X Y mean?
     what is X Y?
+    what is "X Y"?
+    what is 'X Y'?
+    what does "X Y" mean?
+    what does 'X Y' mean?
   END
 
   context "matches" do
