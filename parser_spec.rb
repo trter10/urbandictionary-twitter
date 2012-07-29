@@ -5,6 +5,9 @@ describe Parser do
     what does X Y mean?
     what is X Y?
     what IS X Y?
+    what is X Y ?
+    what is a X Y?
+    what is an X Y?
     what is X Y anyway?
     what is "X Y"?
     what is 'X Y'?
@@ -38,6 +41,9 @@ describe Parser do
     what does it mean?
     what does it even mean?
     what does it all mean?
+    what does that mean?
+    what does that even mean?
+    what does that really mean?
     what is IT?
     @nobody whatever
   END
