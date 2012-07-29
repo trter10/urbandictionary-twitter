@@ -12,6 +12,10 @@ raise "Missing env var" if %w[CONSUMER_KEY CONSUMER_SECRET ACCESS_TOKEN ACCESS_T
   config.oauth_token_secret = ENV["ACCESS_TOKEN_SECRET"]
 end}
 
+Airbrake.configure do |config|
+  config.api_key = 'db6b0882cfa20bbfe2db9abe2768d2c5'
+end
+
 client = TweetStream::Client.new
 client.on_error { puts "TWEETSTREAM error" }
 client.on_inited { puts "TWEETSTREAM inited" }
@@ -44,5 +48,6 @@ client.track(*KEYWORDS) do |status|
   rescue Exception => e
     puts e.inspect
     puts e.backtrace
+    Airbrake.notify e
   end
 end
