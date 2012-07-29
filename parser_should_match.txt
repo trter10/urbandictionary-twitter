@@ -27,3 +27,5 @@ hand job @urbandictionary
 define hand job
 DEFINE hand job
 define 'hand job'
+@urbandictionary define 'hand job'
+#urbandictionary define hand job

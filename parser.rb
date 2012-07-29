@@ -6,6 +6,7 @@ class Parser
     /\A(?:@urbandictionary )#{WTF} is(?: a| an)? #{QUOTED_WORD}(?: anyway)?\??\Z/i,
     /\A(?:what|whut|wut)(?: the fuck| the hell| the shit) is(?: a| an)? #{QUOTED_WORD}\??\Z/i,
     /\A(?:@urbandictionary )?#{WTF} does #{QUOTED_WORD}(?: even| really)? mean\??\Z/i,
+    /\A[@#]urbandictionary define #{QUOTED_WORD}\Z/i,
     /\A[@#]urbandictionary #{QUOTED_WORD}\Z/i,
     /\A#{QUOTED_WORD} [@#]urbandictionary\Z/i,
     /\Adefine #{QUOTED_WORD}\Z/i
