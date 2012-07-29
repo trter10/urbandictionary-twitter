@@ -73,6 +73,7 @@ describe Parser do
       what is today?
       what is going on?
       what is up
+      WHAT IS THIS
       @nobody whatever
       xoxo @urbandictionary xoxo
       Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
