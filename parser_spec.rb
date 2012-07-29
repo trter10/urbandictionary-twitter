@@ -18,7 +18,13 @@ describe Parser do
     what the FUCK does 'X Y' mean?
     what the hell does 'X Y' mean?
     what the shit does 'X Y' mean?
+    @urbandictionary what is 'X Y'?
+    @urbandictionary what does 'X Y' mean?
   END
+
+  # @urbandictionary X Y
+  # @urbandictionary 'X Y'
+  # @urbandictionary "X Y"
 
   context "matches" do
     MATCHES.each_line do |line|
