@@ -22,27 +22,7 @@ client.on_reconnect { puts "TWEETSTREAM reconnect" }
 client.on_no_data_received { puts "TWEETSTREAM no_data_received" }
 client.on_enhance_your_calm { puts "TWEETSTREAM enhance_your_calm" }
 
-KEYWORDS = <<-END.split("\n").map(&:strip)
-  @urbandictionary
-  #urbandictionary
-  what is
-  what the fuck is
-  what the shit is
-  what the hell is
-  whut is
-  whut the fuck is
-  whut the shit is
-  whut the hell is
-  wut is
-  wut the fuck is
-  wut the shit is
-  wut the hell is
-  wtf is
-  what does
-  whut does
-  whut does
-  define
-END
+KEYWORDS = File.readlines("./keywords.txt").map(&:strip)
 
 client.track(*KEYWORDS) do |status|
   puts "STATUS #{status.text.inspect}"
