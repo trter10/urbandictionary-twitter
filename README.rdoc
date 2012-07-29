@@ -1,0 +1,17 @@
+= @urbandictionary
+
+This is a twitter bot that responds to people when they say "what does bootylicious mean?"
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Run the tests locally with "rake" to make sure they pass.
+* Add a test for your feature. This is important to prevent future regressions.
+* Run the tests locally to make sure the test fails as expected.
+* Make your feature addition or bug fix by making the test pass.
+* Commit.
+* Send me a pull request.
+
+== Copyright
+
+Copyright (c) 2012 Urban Dictionary.
