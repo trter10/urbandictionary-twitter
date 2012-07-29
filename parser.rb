@@ -4,8 +4,8 @@ class Parser
     # /^[^"]*what(?: the fuck| the hell)? is an? "?([\s\w]+)"?\?/i,
     # /^define "?([\w\s]+)"?\.?$/i,
     # /@urbandictionary (.+)/i
-    /^what(?: the fuck)? is ['"]?([\w\s]+)['"]?\?$/,
-    /^what(?: the fuck)? does ['"]?([\w\s]+)['"]? mean\?$/,
+    /^what(?: the fuck| the hell| the shit)? is ['"]?([\w\s]+)['"]?\?$/,
+    /^what(?: the fuck| the hell| the shit)? does ['"]?([\w\s]+)['"]? mean\?$/,
   ]
 
   def self.parse(string)
