@@ -1,13 +1,13 @@
 class Parser
-  AT = /(?:@urbandictionary )?/i
   WTF = /(?:(?:what|whut|wut)(?: the fuck| the hell| the shit)?|wtf)/i
-  WORD = /['"]?([\w\s]+)['"]?/
+  QUOTED_WORD = /['"]?([\w\s]+)['"]?/
   
   REGEXPS = [
-    /\A#{AT}#{WTF} is(?: a| an)? #{WORD}(?: anyway)?\??\Z/i,
-    /\A#{AT}#{WTF} does #{WORD}(?: even| really)? mean\??\Z/i,
-    /^[@#]urbandictionary #{WORD}$/i,
-    /^#{WORD} [@#]urbandictionary$/i
+    /\A(?:@urbandictionary )#{WTF} is(?: a| an)? #{QUOTED_WORD}(?: anyway)?\??\Z/i,
+    /\A(?:what|whut|wut)(?: the fuck| the hell| the shit) is(?: a| an)? #{QUOTED_WORD}\??\Z/i,
+    /\A(?:@urbandictionary )?#{WTF} does #{QUOTED_WORD}(?: even| really)? mean\??\Z/i,
+    /^[@#]urbandictionary #{QUOTED_WORD}$/i,
+    /^#{QUOTED_WORD} [@#]urbandictionary$/i
   ]
 
   def self.parse(string)

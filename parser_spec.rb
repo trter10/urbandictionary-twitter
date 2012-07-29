@@ -16,18 +16,6 @@ describe Parser do
   describe "should match" do
     describe_lines <<-END, "X Y"
       what does X Y mean?
-      what is X Y?
-      what is X Y
-      what IS X Y?
-      what is X Y ?
-      wut is X Y ?
-      whut is X Y ?
-      wtf is X Y
-      what is a X Y?
-      what is an X Y?
-      what is X Y anyway?
-      what is "X Y"?
-      what is 'X Y'?
       what the fuck is 'X Y'?
       what the hell is 'X Y'?
       whut does X Y mean?
@@ -62,6 +50,18 @@ describe Parser do
     ], nil
     
     describe_lines <<-END, nil
+      what is X Y?
+      what is X Y
+      what IS X Y?
+      what is X Y ?
+      wut is X Y ?
+      whut is X Y ?
+      wtf is X Y
+      what is a X Y?
+      what is an X Y?
+      what is "X Y"?
+      what is 'X Y'?
+      what is X Y anyway?
       what does it mean?
       what does it even mean?
       what does it all mean?
