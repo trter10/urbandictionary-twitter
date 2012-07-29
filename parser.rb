@@ -1,7 +1,7 @@
 class Parser
   REGEXPS = [
-    /^(?:@urbandictionary )?what(?: the fuck| the hell| the shit)? is(?: a| an)? ['"]?([\w\s]+)['"]?(?: anyway)?\?$/i,
-    /^(?:@urbandictionary )?what(?: the fuck| the hell| the shit)? does ['"]?([\w\s]+)['"]?(?: even| really)? mean\?$/i,
+    /^(?:@urbandictionary )?(?:what|whut|wut)(?: the fuck| the hell| the shit)? is(?: a| an)? ['"]?([\w\s]+)['"]?(?: anyway)?\?$/i,
+    /^(?:@urbandictionary )?(?:what|whut|wut)(?: the fuck| the hell| the shit)? does ['"]?([\w\s]+)['"]?(?: even| really)? mean\?$/i,
     /@urbandictionary ['"]?([\w\s]+)['"]?/i
   ]
 

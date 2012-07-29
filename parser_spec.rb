@@ -16,6 +16,8 @@ describe Parser do
       what is X Y?
       what IS X Y?
       what is X Y ?
+      wut is X Y ?
+      whut is X Y ?
       what is a X Y?
       what is an X Y?
       what is X Y anyway?
@@ -23,6 +25,8 @@ describe Parser do
       what is 'X Y'?
       what the fuck is 'X Y'?
       what the hell is 'X Y'?
+      whut does X Y mean?
+      wut does X Y mean?
       what does "X Y" mean?
       what does 'X Y' mean?
       what does 'X Y' really mean?
