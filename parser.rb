@@ -10,9 +10,9 @@ class Parser
 
   def self.parse(string)
     REGEXPS.find { |regexp| string =~ regexp }
-    match = $1
-    match.sub!(/ anyway$/, '')
-    return nil if match =~ /^(it|it all|it even)$/
-    match
+    if (match = $1)
+      match.sub!(/ anyway$/, '')
+      match unless match =~ /^(it|it all|it even)$/i
+    end
   end
 end

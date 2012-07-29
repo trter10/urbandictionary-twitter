@@ -21,10 +21,10 @@ describe Parser do
     @urbandictionary what is 'X Y'?
     @urbandictionary what does 'X Y' mean?
   END
-
   # @urbandictionary X Y
-  # @urbandictionary 'X Y'
-  # @urbandictionary "X Y"
+  #   @urbandictionary 'X Y'
+  #   @urbandictionary "X Y"
+  #   
 
   context "matches" do
     MATCHES.each_line do |line|
@@ -39,6 +39,8 @@ describe Parser do
     what does it mean?
     what does it even mean?
     what does it all mean?
+    what is IT?
+    @nobody whatever
   END
 
   context "doesn't match" do
