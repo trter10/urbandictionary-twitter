@@ -17,4 +17,21 @@ describe Formatter do
     actual = Formatter.format("leonjohnmurphy", input)
     actual.should == "@leonjohnmurphy: 69: Simultaneous oral sex. Can be practised by M+M, M+F or F+F. The reference is that the n... http://69.urbanup.com/385099"
   }
+  
+  it {
+    input = {
+        "author" => "Renato", 
+        "current_vote" => "", 
+        "defid" => 1071520, 
+        "definition" => "A country I've never heard of.", 
+        "example" => "Do they speak English in \"what\"?", 
+        "permalink" => "http://what.urbanup.com/1071520", 
+        "thumbs_down" => 317, 
+        "thumbs_up" => 1323, 
+        "word" => "what"
+    }
+    
+    actual = Formatter.format("leonjohnmurphy", input)
+    actual.should == "@leonjohnmurphy: what: A country I've never heard of.... http://what.urbanup.com/1071520"
+  }
 end
