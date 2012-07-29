@@ -69,6 +69,7 @@ describe Parser do
       what does that even mean?
       what does that really mean?
       what is IT?
+      wtf is good
       what is air
       what is today?
       what is happening?
