@@ -14,6 +14,20 @@ describe Parser do
       end
     end
   end
+
+  NO_MATCHES = <<-END
+    what does it mean?
+    what does it all mean?
+  END
+
+  describe "no matches" do
+    MATCHES.each_line do |line|
+      line.strip!
+      it line do
+        Parser.parse(line).should be_nil
+      end
+    end
+  end
   
   # it { Parser.parse("this means nothing").should be_nil }
   # 
