@@ -41,7 +41,7 @@ describe Parser do
     Omg my mom says "what does 69 mean " and my brothers explaining it to her but it's totally wrong lmaoo..
   END
   
-  def self.each_line_it(array)
+  def self.describe_lines(array)
     array.each_line do |line|
       line.strip!
       it line.inspect do
@@ -50,18 +50,15 @@ describe Parser do
     end
   end
 
-  context "matches" do
-    each_line_it MATCHES do |line|
+  describe "matches" do
+    describe_lines MATCHES do |line|
       Parser.parse(line).should == "X Y"
     end
   end
 
-  context "doesn't match" do
-    NO_MATCHES.each_line do |line|
-      line.strip!
-      it line.inspect do
-        Parser.parse(line).should be_nil
-      end
+  describe "doesn't match" do
+    describe_lines NO_MATCHES do |line|
+      Parser.parse(line).should == nil
     end
   end
 end
