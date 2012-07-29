@@ -1,7 +1,7 @@
 class Parser
+  AT = /(?:@urbandictionary )?/i
   WTF = /(?:what|whut|wut)(?: the fuck| the hell| the shit)?/i
   WORD = /['"]?([\w\s]+)['"]?/
-  AT = /(?:@urbandictionary )?/i
   
   REGEXPS = [
     /^#{AT}#{WTF} is(?: a| an)? #{WORD}(?: anyway)?\??$/i,
