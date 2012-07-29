@@ -6,7 +6,8 @@ class Parser
   REGEXPS = [
     /\A#{AT}#{WTF} is(?: a| an)? #{WORD}(?: anyway)?\??\Z/i,
     /\A#{AT}#{WTF} does #{WORD}(?: even| really)? mean\??\Z/i,
-    /^@urbandictionary ['"]?([\w\s]+)['"]?$/i
+    /^[@#]urbandictionary #{WORD}$/i,
+    /^#{WORD} [@#]urbandictionary$/i
   ]
 
   def self.parse(string)

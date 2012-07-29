@@ -49,6 +49,9 @@ describe Parser do
       @urbandictionary "X Y"
       @UrbanDictionary X Y
       What The Fuck Does X Y mean?
+      X Y #urbandictionary
+      X Y #UrbanDictionary
+      #urbandictionary X Y
     END
   end
 

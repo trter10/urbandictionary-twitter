@@ -22,7 +22,7 @@ client.on_reconnect { puts "TWEETSTREAM reconnect" }
 client.on_no_data_received { puts "TWEETSTREAM no_data_received" }
 client.on_enhance_your_calm { puts "TWEETSTREAM enhance_your_calm" }
 
-client.track("what", "@urbandictionary") do |status|
+client.track("what", "wut", "whut", "wtf", "@urbandictionary", "#urbandictionary") do |status|
   puts "STATUS #{status.text.inspect}"
   
   begin
