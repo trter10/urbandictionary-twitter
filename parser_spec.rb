@@ -1,8 +1,11 @@
 require './parser'
 
 describe Parser do
+  # Twitter.status(229631506031718400).text
+  
   def self.describe_lines(string, expected)
-    string.each_line do |line|
+    method = string.respond_to?(:each_line) ? :each_line : :each
+    string.send(method) do |line|
       line.strip!
       it line.inspect do
         Parser.parse(line).should == expected
@@ -10,7 +13,7 @@ describe Parser do
     end
   end
 
-  describe "matches" do
+  describe "should match" do
     describe_lines <<-END, "X Y"
       what does X Y mean?
       what is X Y?
@@ -19,6 +22,7 @@ describe Parser do
       what is X Y ?
       wut is X Y ?
       whut is X Y ?
+      wtf is X Y
       what is a X Y?
       what is an X Y?
       what is X Y anyway?
@@ -48,7 +52,12 @@ describe Parser do
     END
   end
 
-  describe "doesn't match" do
+  describe "shouldn't match" do
+    describe_lines [
+      "@animullcrackers \nWhat is this",
+      "@animullcrackers \nWhat does this mean"
+    ], nil
+    
     describe_lines <<-END, nil
       what does it mean?
       what does it even mean?
