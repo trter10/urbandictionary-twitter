@@ -4,6 +4,8 @@ describe Parser do
   MATCHES = <<-END
     what does X Y mean?
     what is X Y?
+    what IS X Y?
+    what is X Y anyway?
     what is "X Y"?
     what is 'X Y'?
     what the fuck is 'X Y'?
@@ -13,6 +15,7 @@ describe Parser do
     what does 'X Y' really mean?
     what does 'X Y' even mean?
     what the fuck does 'X Y' mean?
+    what the FUCK does 'X Y' mean?
     what the hell does 'X Y' mean?
     what the shit does 'X Y' mean?
   END
@@ -28,6 +31,7 @@ describe Parser do
 
   NO_MATCHES = <<-END
     what does it mean?
+    what does it even mean?
     what does it all mean?
   END
 
