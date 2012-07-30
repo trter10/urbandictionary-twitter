@@ -23,7 +23,7 @@ describe Formatter do
         "author" => "Renato", 
         "current_vote" => "", 
         "defid" => 1071520, 
-        "definition" => "A country   I've never heard of. ", 
+        "definition" => " A country   I've never heard of. ", 
         "example" => "Do they speak English in \"what\"?", 
         "permalink" => "http://what.urbanup.com/1071520", 
         "thumbs_down" => 317, 
