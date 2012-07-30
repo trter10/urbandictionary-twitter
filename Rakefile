@@ -1,5 +1,5 @@
 task :default do
-  sh "rspec"
+  sh "bundle exec rspec -rspec_helper"
 end
 
 task :start do

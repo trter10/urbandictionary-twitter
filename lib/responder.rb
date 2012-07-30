@@ -1,3 +1,7 @@
+require File.dirname(__FILE__) + '/ud'
+require File.dirname(__FILE__) + '/parser'
+require File.dirname(__FILE__) + '/formatter'
+
 class Responder
   def self.respond(status)
     puts "STATUS #{status.text.inspect}"

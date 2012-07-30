@@ -1,9 +1,6 @@
 Bundler.require
-require './lib/parser'
-require './lib/ud'
-require './lib/formatter'
-require './lib/config'
-require './lib/responder'
+require File.dirname(__FILE__) + '/lib/config'
+require File.dirname(__FILE__) + '/lib/responder'
 
 client = TweetStream::Client.new
 client.on_error { puts "TWEETSTREAM error" }
