@@ -23,7 +23,7 @@ describe Formatter do
         "author" => "Renato", 
         "current_vote" => "", 
         "defid" => 1071520, 
-        "definition" => "A country   I've never heard of.", 
+        "definition" => "A country   I've never heard of. ", 
         "example" => "Do they speak English in \"what\"?", 
         "permalink" => "http://what.urbanup.com/1071520", 
         "thumbs_down" => 317, 
@@ -33,5 +33,22 @@ describe Formatter do
     
     actual = Formatter.format("leonjohnmurphy", input)
     actual.should == "@leonjohnmurphy: what: A country I've never heard of. http://what.urbanup.com/1071520"
+  }
+  
+  it {
+    input = {
+        "author" => "Stan", 
+        "current_vote" => "", 
+        "defid" => 155361, 
+        "definition" => "A city sport played against a wall with you hards. Probably one of the oldest and greatest games. Played in the U.S. and Ireland, in U.S. mostly in New York City.", 
+        "example" => "Whoa, did u see how he hit that handball?", 
+        "permalink" => "http://handball.urbanup.com/155361", 
+        "thumbs_down" => 29, 
+        "thumbs_up" => 99, 
+        "word" => "handball"
+    }
+    
+    actual = Formatter.format("ZwickyJulia", input)
+    actual.should == "@ZwickyJulia: handball: A city sport played against a wall with you hards. Probably one of the oldest... http://handball.urbanup.com/155361"
   }
 end
