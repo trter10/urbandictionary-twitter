@@ -5,6 +5,7 @@ class Parser
   REGEXPS = [
     /\A(?:@urbandictionary )#{WTF} is(?: a| an)? #{QUOTED_WORD}(?: anyway)?\??\Z/i,
     /\A(?:what|whut|wut)(?: the fuck| the hell| the shit) is(?: a| an)? #{QUOTED_WORD}\??\Z/i,
+    /\A(?:what is|what's) the definition of #{QUOTED_WORD}\??\Z/i,
     /\A(?:@urbandictionary )?#{WTF} does #{QUOTED_WORD}(?: even| really)? mean\??\Z/i,
     /\A[@#]urbandictionary define #{QUOTED_WORD}\Z/i,
     /\A[@#]urbandictionary #{QUOTED_WORD}\Z/i,
