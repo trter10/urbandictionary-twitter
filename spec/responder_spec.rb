@@ -2,7 +2,6 @@ require File.dirname(__FILE__) + '/../lib/responder'
 
 describe Responder do
   before { ENV["UPDATE_TWITTER"] = "true" }
-  after { Airbrake.sender.collected.should == [] }
   
   it "responds to a user" do
     Object.stub(:puts)

@@ -15,5 +15,11 @@ client.on_enhance_your_calm { puts "TWEETSTREAM enhance_your_calm" }
 keywords = File.readlines("./keywords.txt").map(&:strip)
 
 client.track(*keywords) do |status|
-  Responder.respond(status)
+  begin
+    Responder.respond(status)
+  rescue Exception => e
+    puts e.inspect
+    puts e.backtrace
+    Airbrake.notify e
+  end
 end
