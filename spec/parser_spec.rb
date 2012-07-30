@@ -1,4 +1,4 @@
-require './parser'
+require File.dirname(__FILE__) + '/../lib/parser'
 
 describe Parser do
   # Twitter.status(229631506031718400).text

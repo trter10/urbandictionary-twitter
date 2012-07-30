@@ -1,4 +1,4 @@
-require './formatter'
+require File.dirname(__FILE__) + '/../lib/formatter'
 
 describe Formatter do
   it {
