@@ -14,7 +14,7 @@ describe Parser do
   end
 
   describe "should match" do
-    describe_lines File.readlines("parser_should_match.txt").map(&:strip), "hand job"
+    describe_lines File.readlines(File.dirname(__FILE__) + "/parser_should_match.txt").map(&:strip), "hand job"
   end
 
   describe "shouldn't match" do
@@ -23,6 +23,6 @@ describe Parser do
       "@animullcrackers \nWhat does this mean"
     ], nil
     
-    describe_lines File.readlines("parser_should_not_match.txt"), nil
+    describe_lines File.readlines(File.dirname(__FILE__) + "/parser_should_not_match.txt"), nil
   end
 end

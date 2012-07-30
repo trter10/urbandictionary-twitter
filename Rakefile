@@ -1,5 +1,5 @@
 task :default do
-  sh "rspec *_spec.rb"
+  sh "rspec"
 end
 
 task :start do
