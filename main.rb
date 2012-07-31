@@ -3,14 +3,10 @@ require File.dirname(__FILE__) + '/lib/config'
 require File.dirname(__FILE__) + '/lib/responder'
 
 client = TweetStream::Client.new
-client.on_error { puts "TWEETSTREAM error" }
-client.on_inited { puts "TWEETSTREAM inited" }
-client.on_limit { puts "TWEETSTREAM limit" }
-client.on_unauthorized { puts "TWEETSTREAM unauthorized" }
-client.on_anything { puts "TWEETSTREAM anything" }
-client.on_reconnect { puts "TWEETSTREAM reconnect" }
-client.on_no_data_received { puts "TWEETSTREAM no_data_received" }
-client.on_enhance_your_calm { puts "TWEETSTREAM enhance_your_calm" }
+
+%w/error inited limit unauthorized anything reconnect no_data_received enhance_your_calm/.each do |event|
+  client.send("on_#{event}") { puts "TWEETSTREAM #{event}" }
+end
 
 keywords = File.readlines("./keywords.txt").map(&:strip)
 
