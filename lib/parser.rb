@@ -15,6 +15,7 @@ class Parser
   ]
 
   def self.parse(string)
+    string.gsub! /\s+/, ' '
     REGEXPS.find { |regexp| string =~ regexp }
     if (match = $1)
       match.strip!
