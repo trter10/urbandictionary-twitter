@@ -14,6 +14,16 @@ client.track(*keywords) do |status|
   begin
     Responder.respond(status)
   rescue Exception => e
+    if e.is_a?(Twitter::Error)
+      puts "TWITTER_ERROR", {
+        http_headers: e.http_headers,
+        ratelimit_reset: e.ratelimit_reset,
+        ratelimit_limit: e.ratelimit_limit,
+        ratelimit_remaining: e.ratelimit_remaining,
+        retry_after: e.retry_after
+      }
+    end
+    
     puts e.inspect
     puts e.backtrace
     Airbrake.notify e
