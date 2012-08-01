@@ -9,3 +9,7 @@ end
 task :stop do
   sh "heroku config:unset UPDATE_TWITTER"
 end
+
+task :diff do
+  sh "git diff heroku/master..head"
+end
