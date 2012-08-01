@@ -4,7 +4,6 @@ require File.dirname(__FILE__) + '/formatter'
 
 class Responder
   def self.respond(status)
-    puts "STATUS #{status.text.inspect}"
     parsed = Parser.parse(status.text)
 
     if parsed
