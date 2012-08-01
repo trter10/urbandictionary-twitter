@@ -11,7 +11,9 @@ class Parser
     /\A[@#]urbandictionary define #{QUOTED_WORD}\Z/i,
     /\A[@#]urbandictionary #{QUOTED_WORD}\Z/i,
     /\A#{QUOTED_WORD} [@#]urbandictionary\Z/i,
-    /\Adefine #{QUOTED_WORD}\Z/i
+    /\A#?define #{QUOTED_WORD}\Z/i,
+    /\A#(?:slang|ud) #{QUOTED_WORD}\Z/i,
+    /\A#{QUOTED_WORD} #(?:slang|ud)\Z/i
   ]
 
   def self.parse(string)

@@ -30,6 +30,11 @@ hand job #UrbanDictionary
 hand job @urbandictionary
 #urbandictionary hand job
 define hand job
+#define hand job
+#slang hand job
+#ud hand job
+hand job #ud
+hand job    #slang
 DEFINE hand job
 define 'hand job'
 @urbandictionary define 'hand job'
