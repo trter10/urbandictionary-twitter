@@ -17,13 +17,9 @@ client.track(*keywords) do |status|
     puts e.inspect
     puts e.backtrace
     Airbrake.notify e
-
-    if e.is_a?(Twitter::Error)
-      puts "TWITTER_ERROR #{e.http_headers.inspect}"
-      puts "TWITTER_ERROR #{e.ratelimit_reset.inspect}"
-      puts "TWITTER_ERROR #{e.ratelimit_limit.inspect}"
-      puts "TWITTER_ERROR #{e.ratelimit_remaining.inspect}"
-      puts "TWITTER_ERROR #{e.retry_after.inspect}"
+    
+    %w/http_headers ratelimit_reset ratelimit_limit ratelimit_remaining retry_after/.each do |method|
+      puts "TWITTER_ERROR #{method}: #{e.send(method).inspect if e.respond_to?(method)}"
     end
   end
 end
