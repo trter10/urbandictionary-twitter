@@ -17,7 +17,5 @@ client.track(*keywords) do |status|
     puts e.inspect
     puts e.backtrace
     Airbrake.notify e
-    
-    puts e.rate_limit.inspect if e.respond_to?(:rate_limit)
   end
 end
