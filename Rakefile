@@ -13,3 +13,7 @@ end
 task :diff do
   sh "git diff heroku/master..head"
 end
+
+task :run do
+  sh "bundle exec foreman start"
+end
