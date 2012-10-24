@@ -1,27 +1,28 @@
 Bundler.require
 require File.dirname(__FILE__) + '/lib/config'
 require File.dirname(__FILE__) + '/lib/responder'
+require File.dirname(__FILE__) + '/lib/hosted_graphite'
 
-$statsd = Statsd.new(ENV['STATSD_HOST'])
+$graphite = HostedGraphite.new
 
 client = TweetStream::Client.new
 
 %w/error inited limit unauthorized anything reconnect no_data_received enhance_your_calm/.each do |event|
   client.send("on_#{event}") do
     puts "TWEETSTREAM #{event}"
-    $statsd.increment "twitter.#{event}"
+    $graphite.send "twitter.#{event}"
   end
 end
 
 keywords = File.readlines("./keywords.txt").map(&:strip)
 
 client.track(*keywords) do |status|
-  $statsd.increment 'twitter.track'
+  $graphite.send 'twitter.track'
 
   begin
     Responder.respond(status)
   rescue Exception => e
-    $statsd.increment 'twitter.error'
+    $graphite.send 'twitter.error'
 
     puts e.inspect
     puts e.backtrace

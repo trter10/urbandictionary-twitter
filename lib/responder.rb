@@ -21,7 +21,7 @@ class Responder
         end
 
         puts "UPDATE #{response.inspect} (in_reply_to #{status.id.inspect})" if ENV["VERBOSE"]
-        $statsd.increment 'twitter.update'
+        $graphite.send 'twitter.update'
       end
     end
   end
