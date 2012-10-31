@@ -7,6 +7,6 @@ raise "Missing env var" if %w[CONSUMER_KEY CONSUMER_SECRET ACCESS_TOKEN ACCESS_T
   config.oauth_token_secret = ENV["ACCESS_TOKEN_SECRET"]
 end}
 
-Airbrake.configure do |config|
-  config.api_key = 'db6b0882cfa20bbfe2db9abe2768d2c5'
+Honeybadger.configure do |config|
+  config.api_key = ENV["HONEYBADGER_APIKEY"]
 end

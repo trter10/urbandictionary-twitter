@@ -26,6 +26,6 @@ client.track(*keywords) do |status|
 
     puts e.inspect
     puts e.backtrace
-    Airbrake.notify e
+    Honeybadger.notify e
   end
 end
